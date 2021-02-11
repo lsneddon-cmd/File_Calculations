@@ -8,16 +8,11 @@ public class FIleCalculations {
     public static void main(String[] args) {
         try (BufferedReader reader =
               Files.newBufferedReader(Paths.get("../resources/dataset_91033.txt"))) {
-            // int finalCount =
-            //         reader.readAllLines.stream()
-            //             .mapToInt(Integer::parseInt)
-            //             .sum();
-            String val;
-            int sum = 0;
 
-            while ((val = reader.readLine()) != null) {
-              sum += Integer.parseInt(val);
-            }
+            int sum = 
+              reader.lines()
+                .mapToInt(Integer::parseInt)
+                .sum();
 
             System.out.println("Sum: " + sum);
         } catch(IOException e) {
